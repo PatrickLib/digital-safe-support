@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigitalSafe - Support</title>
+  <meta name="description" content="DigitalSafe - Secure Offline Password Vault. Get help, FAQs, and privacy policy.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+  <style>
+    :root {
+      --color-primary: #95E1D3;
+      --color-secondary: #7C3AED;
+      --color-accent: #22C55E;
+      --color-bg-start: #F8FAFC;
+      --color-bg-end: #E2E8F0;
+      --color-text-primary: #1E293B;
+      --color-text-secondary: #64748B;
+      --color-glass-bg: rgba(255, 255, 255, 0.7);
+      --color-glass-border: rgba(255, 255, 255, 0.9);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      background: linear-gradient(180deg, var(--color-bg-start) 0%, var(--color-bg-end) 100%);
+      color: var(--color-text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--color-glass-border);
+      padding: 16px 24px;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--color-text-primary);
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-link {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--color-secondary);
+    }
+
+    .lang-selector {
+      position: relative;
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: var(--color-glass-bg);
+      border: 1px solid var(--color-glass-border);
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      color: var(--color-text-primary);
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 8px;
+      background: white;
+      border: 1px solid var(--color-glass-border);
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: none;
+      min-width: 160px;
+    }
+
+    .lang-dropdown.show {
+      display: block;
+    }
+
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .lang-option:hover {
+      background: var(--color-bg-end);
+    }
+
+    .lang-option.active {
+      background: linear-gradient(135deg, rgba(149, 225, 211, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
+      color: var(--color-secondary);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 28px;
+      overflow: hidden;
+      margin: 0 auto 32px;
+      box-shadow: 0 20px 60px rgba(124, 58, 237, 0.25);
+    }
+
+    .hero-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: var(--color-text-secondary);
+    }
+
+    /* Main Content */
+    .main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-title-icon svg {
+      width: 22px;
+      height: 22px;
+      color: white;
+    }
+
+    /* Glass Card */
+    .glass-card {
+      background: var(--color-glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--color-glass-border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 20px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .faq-item:first-child {
+      padding-top: 0;
+    }
+
+    .faq-question {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 24px;
+      color: var(--color-secondary);
+      transition: transform 0.2s;
+    }
+
+    .faq-item.open .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      font-size: 15px;
+      color: var(--color-text-secondary);
+      margin-top: 12px;
+      display: none;
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: var(--color-glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--color-glass-border);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .contact-icon svg {
+      width: 28px;
+      height: 28px;
+      color: white;
+    }
+
+    .contact-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .contact-info {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+    }
+
+    .contact-info a {
+      color: var(--color-secondary);
+      text-decoration: none;
+    }
+
+    /* Privacy Policy */
+    .policy-content {
+      font-size: 15px;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .policy-content h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin: 24px 0 12px;
+    }
+
+    .policy-content h3:first-child {
+      margin-top: 0;
+    }
+
+    .policy-content ul {
+      margin: 12px 0;
+      padding-left: 24px;
+    }
+
+    .policy-content li {
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--color-text-secondary);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-secondary);
+    }
+
+    /* App Store Badge */
+    .app-store-badge {
+      display: inline-block;
+      margin-top: 24px;
+    }
+
+    .app-store-badge img {
+      height: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-title {
+        font-size: 22px;
+      }
+    }
+
+    /* Hidden class for language switching */
+    [data-lang] {
+      display: none;
+    }
+
+    [data-lang].active {
+      display: block;
+    }
+
+    .nav-link[data-lang], .contact-card[data-lang] {
+      display: none;
+    }
+
+    .nav-link[data-lang].active, .contact-card[data-lang].active {
+      display: flex;
+    }
+
+    .contact-card[data-lang].active {
+      display: block;
+    }
+
+    /* iOS Only Download Section */
+    .ios-only-section {
+      max-width: 900px;
+      margin: -40px auto 48px;
+      padding: 0 24px;
+    }
+
+    .ios-only-card {
+      background: linear-gradient(135deg, rgba(149, 225, 211, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 2px solid var(--color-primary);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .ios-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .ios-badge svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .ios-only-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      margin-bottom: 12px;
+    }
+
+    .ios-only-desc {
+      font-size: 16px;
+      color: var(--color-text-secondary);
+      margin-bottom: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .app-store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #000;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 24px;
+    }
+
+    .app-store-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .app-store-btn svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .app-store-btn-text {
+      text-align: left;
+    }
+
+    .app-store-btn-small {
+      font-size: 11px;
+      opacity: 0.8;
+    }
+
+    .app-store-btn-large {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* Security Warning */
+    .security-warning {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 12px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .security-warning-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      color: #EF4444;
+    }
+
+    .security-warning-content {
+      flex: 1;
+    }
+
+    .security-warning-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #DC2626;
+      margin-bottom: 4px;
+    }
+
+    .security-warning-text {
+      font-size: 13px;
+      color: #7F1D1D;
+      line-height: 1.5;
+    }
+
+    .security-warning-text strong {
+      color: #DC2626;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <img src="AppIcon.png" alt="DigitalSafe">
+        </div>
+        <span class="logo-text">DigitalSafe</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+        <a href="#privacy" class="nav-link" data-i18n="nav.privacy">Privacy</a>
+      </nav>
+
+      <div class="lang-selector">
+        <button class="lang-btn" id="langBtn">
+          <span id="currentLangFlag">🇺🇸</span>
+          <span id="currentLangName">English</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6,9 12,15 18,9"/>
+          </svg>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <div class="lang-option active" data-lang-code="en">
+            <span>🇺🇸</span>
+            <span>English</span>
+          </div>
+          <div class="lang-option" data-lang-code="zh-Hans">
+            <span>🇨🇳</span>
+            <span>简体中文</span>
+          </div>
+          <div class="lang-option" data-lang-code="zh-Hant">
+            <span>🇭🇰</span>
+            <span>繁體中文</span>
+          </div>
+          <div class="lang-option" data-lang-code="ja">
+            <span>🇯🇵</span>
+            <span>日本語</span>
+          </div>
+          <div class="lang-option" data-lang-code="de">
+            <span>🇩🇪</span>
+            <span>Deutsch</span>
+          </div>
+          <div class="lang-option" data-lang-code="fr">
+            <span>🇫🇷</span>
+            <span>Français</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-icon">
+      <img src="AppIcon.png" alt="DigitalSafe">
+    </div>
+    <h1 data-i18n="hero.title">Support Center</h1>
+    <p data-i18n="hero.subtitle">Get help with DigitalSafe</p>
+  </section>
+
+  <!-- iOS Only Download Section -->
+  <section class="ios-only-section">
+    <div class="ios-only-card">
+      <div class="ios-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        <span data-i18n="ios.badge">iOS Exclusive</span>
+      </div>
+      
+      <h2 class="ios-only-title" data-i18n="ios.title">Available Only on iOS App Store</h2>
+      <p class="ios-only-desc" data-i18n="ios.desc">DigitalSafe is exclusively available on the Apple App Store for iPhone and iPad. We do not offer Android or any other platform versions.</p>
+      
+      <a href="https://apps.apple.com/app/digitalsafe" class="app-store-btn" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        <div class="app-store-btn-text">
+          <div class="app-store-btn-small" data-i18n="ios.downloadOn">Download on the</div>
+          <div class="app-store-btn-large">App Store</div>
+        </div>
+      </a>
+      
+      <div class="security-warning">
+        <svg class="security-warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        <div class="security-warning-content">
+          <div class="security-warning-title" data-i18n="ios.warningTitle">⚠️ Security Warning</div>
+          <div class="security-warning-text" data-i18n="ios.warningText">DigitalSafe is <strong>ONLY</strong> available on the official Apple App Store. We do <strong>NOT</strong> provide Android versions or any third-party download channels. Any app claiming to be DigitalSafe from other sources may be malicious software. Please protect your security!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+      <h2 class="section-title">
+        <div class="section-title-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <span data-i18n="faq.title">Frequently Asked Questions</span>
+      </h2>
+
+      <div class="glass-card">
+        <!-- FAQ Items - English -->
+        <div data-lang="en" class="active">
+          <div class="faq-item open">
+            <div class="faq-question">Is my data really stored offline?</div>
+            <div class="faq-answer">Yes! DigitalSafe stores all your data locally on your device using Core Data. Your passwords and sensitive information never leave your device unless you enable iCloud sync, which uses end-to-end encryption.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">What happens if I forget my master password?</div>
+            <div class="faq-answer">If you've set up a recovery key or security questions, you can use them to reset your password. We recommend storing your recovery key in a safe place. Without these recovery options, there's no way to recover your data due to our zero-knowledge architecture.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How does iCloud sync work?</div>
+            <div class="faq-answer">When enabled, your encrypted data syncs across all your Apple devices via iCloud. The data is encrypted before leaving your device and can only be decrypted with your master password. Apple cannot read your data.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How much does DigitalSafe cost?</div>
+            <div class="faq-answer">DigitalSafe is a one-time purchase with no subscriptions or hidden fees. Pay once and enjoy all features forever, including all future updates.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">How do I export my data?</div>
+            <div class="faq-answer">Go to Settings > Export Data. You can export your data in encrypted format for backup purposes. We recommend keeping backups in a secure location.</div>
+          </div>
+        </div>
+
+        <!-- FAQ Items - 简体中文 -->
+        <div data-lang="zh-Hans">
+          <div class="faq-item open">
+            <div class="faq-question">我的数据真的是离线存储的吗？</div>
+            <div class="faq-answer">是的！DigitalSafe 使用 Core Data 将所有数据本地存储在您的设备上。除非您启用 iCloud 同步（使用端到端加密），否则您的密码和敏感信息永远不会离开您的设备。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">如果我忘记了主密码怎么办？</div>
+            <div class="faq-answer">如果您设置了恢复密钥或安全问题，可以使用它们来重置密码。我们建议将恢复密钥保存在安全的地方。由于我们的零知识架构，如果没有这些恢复选项，将无法恢复您的数据。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">iCloud 同步是如何工作的？</div>
+            <div class="faq-answer">启用后，您的加密数据会通过 iCloud 在所有 Apple 设备之间同步。数据在离开设备之前就已加密，只能使用您的主密码解密。Apple 无法读取您的数据。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">DigitalSafe 需要多少钱？</div>
+            <div class="faq-answer">DigitalSafe 采用一次性付费模式，没有订阅或隐藏费用。一次购买，永久使用所有功能，包括未来的所有更新。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">如何导出我的数据？</div>
+            <div class="faq-answer">前往 设置 > 导出数据。您可以将数据导出为加密格式以进行备份。我们建议将备份保存在安全的位置。</div>
+          </div>
+        </div>
+
+        <!-- FAQ Items - 繁體中文 -->
+        <div data-lang="zh-Hant">
+          <div class="faq-item open">
+            <div class="faq-question">我的資料真的是離線儲存的嗎？</div>
+            <div class="faq-answer">是的！DigitalSafe 使用 Core Data 將所有資料本地儲存在您的裝置上。除非您啟用 iCloud 同步（使用端對端加密），否則您的密碼和敏感資訊永遠不會離開您的裝置。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">如果我忘記了主密碼怎麼辦？</div>
+            <div class="faq-answer">如果您設定了恢復密鑰或安全問題，可以使用它們來重設密碼。我們建議將恢復密鑰保存在安全的地方。由於我們的零知識架構，如果沒有這些恢復選項，將無法恢復您的資料。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">iCloud 同步是如何運作的？</div>
+            <div class="faq-answer">啟用後，您的加密資料會透過 iCloud 在所有 Apple 裝置之間同步。資料在離開裝置之前就已加密，只能使用您的主密碼解密。Apple 無法讀取您的資料。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">DigitalSafe 需要多少錢？</div>
+            <div class="faq-answer">DigitalSafe 採用一次性付費模式，沒有訂閱或隱藏費用。一次購買，永久使用所有功能，包括未來的所有更新。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">如何匯出我的資料？</div>
+            <div class="faq-answer">前往 設定 > 匯出資料。您可以將資料匯出為加密格式以進行備份。我們建議將備份保存在安全的位置。</div>
+          </div>
+        </div>
+
+        <!-- FAQ Items - 日本語 -->
+        <div data-lang="ja">
+          <div class="faq-item open">
+            <div class="faq-question">データは本当にオフラインで保存されますか？</div>
+            <div class="faq-answer">はい！DigitalSafeはCore Dataを使用して、すべてのデータをデバイスにローカル保存します。iCloud同期（エンドツーエンド暗号化を使用）を有効にしない限り、パスワードや機密情報がデバイスから外部に出ることはありません。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">マスターパスワードを忘れた場合はどうすればいいですか？</div>
+            <div class="faq-answer">回復キーまたはセキュリティの質問を設定している場合は、それらを使用してパスワードをリセットできます。回復キーは安全な場所に保管することをお勧めします。ゼロ知識アーキテクチャのため、これらの回復オプションがない場合、データを回復する方法はありません。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">iCloud同期はどのように機能しますか？</div>
+            <div class="faq-answer">有効にすると、暗号化されたデータがiCloud経由ですべてのAppleデバイス間で同期されます。データはデバイスを離れる前に暗号化され、マスターパスワードでのみ復号化できます。Appleはあなたのデータを読むことができません。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">DigitalSafeの価格はいくらですか？</div>
+            <div class="faq-answer">DigitalSafeは買い切り型で、サブスクリプションや隠れた料金はありません。一度購入すれば、将来のすべてのアップデートを含むすべての機能を永久にご利用いただけます。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">データをエクスポートするにはどうすればいいですか？</div>
+            <div class="faq-answer">設定 > データのエクスポートに移動します。バックアップ目的で暗号化された形式でデータをエクスポートできます。バックアップは安全な場所に保管することをお勧めします。</div>
+          </div>
+        </div>
+
+        <!-- FAQ Items - Deutsch -->
+        <div data-lang="de">
+          <div class="faq-item open">
+            <div class="faq-question">Werden meine Daten wirklich offline gespeichert?</div>
+            <div class="faq-answer">Ja! DigitalSafe speichert alle Ihre Daten lokal auf Ihrem Gerät mit Core Data. Ihre Passwörter und sensiblen Informationen verlassen Ihr Gerät nie, es sei denn, Sie aktivieren die iCloud-Synchronisierung, die Ende-zu-Ende-Verschlüsselung verwendet.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Was passiert, wenn ich mein Master-Passwort vergesse?</div>
+            <div class="faq-answer">Wenn Sie einen Wiederherstellungsschlüssel oder Sicherheitsfragen eingerichtet haben, können Sie diese verwenden, um Ihr Passwort zurückzusetzen. Wir empfehlen, Ihren Wiederherstellungsschlüssel an einem sicheren Ort aufzubewahren. Aufgrund unserer Zero-Knowledge-Architektur gibt es ohne diese Wiederherstellungsoptionen keine Möglichkeit, Ihre Daten wiederherzustellen.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Wie funktioniert die iCloud-Synchronisierung?</div>
+            <div class="faq-answer">Wenn aktiviert, werden Ihre verschlüsselten Daten über iCloud auf allen Ihren Apple-Geräten synchronisiert. Die Daten werden verschlüsselt, bevor sie Ihr Gerät verlassen, und können nur mit Ihrem Master-Passwort entschlüsselt werden. Apple kann Ihre Daten nicht lesen.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Wie viel kostet DigitalSafe?</div>
+            <div class="faq-answer">DigitalSafe ist ein Einmalkauf ohne Abonnements oder versteckte Gebühren. Einmal kaufen und alle Funktionen für immer nutzen, einschließlich aller zukünftigen Updates.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Wie exportiere ich meine Daten?</div>
+            <div class="faq-answer">Gehen Sie zu Einstellungen > Daten exportieren. Sie können Ihre Daten in verschlüsseltem Format für Backup-Zwecke exportieren. Wir empfehlen, Backups an einem sicheren Ort aufzubewahren.</div>
+          </div>
+        </div>
+
+        <!-- FAQ Items - Français -->
+        <div data-lang="fr">
+          <div class="faq-item open">
+            <div class="faq-question">Mes données sont-elles vraiment stockées hors ligne ?</div>
+            <div class="faq-answer">Oui ! DigitalSafe stocke toutes vos données localement sur votre appareil en utilisant Core Data. Vos mots de passe et informations sensibles ne quittent jamais votre appareil, sauf si vous activez la synchronisation iCloud, qui utilise le chiffrement de bout en bout.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Que se passe-t-il si j'oublie mon mot de passe principal ?</div>
+            <div class="faq-answer">Si vous avez configuré une clé de récupération ou des questions de sécurité, vous pouvez les utiliser pour réinitialiser votre mot de passe. Nous vous recommandons de conserver votre clé de récupération dans un endroit sûr. En raison de notre architecture zéro connaissance, sans ces options de récupération, il n'y a aucun moyen de récupérer vos données.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Comment fonctionne la synchronisation iCloud ?</div>
+            <div class="faq-answer">Lorsqu'elle est activée, vos données chiffrées se synchronisent sur tous vos appareils Apple via iCloud. Les données sont chiffrées avant de quitter votre appareil et ne peuvent être déchiffrées qu'avec votre mot de passe principal. Apple ne peut pas lire vos données.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Combien coûte DigitalSafe ?</div>
+            <div class="faq-answer">DigitalSafe est un achat unique sans abonnements ni frais cachés. Achetez une fois et profitez de toutes les fonctionnalités pour toujours, y compris toutes les futures mises à jour.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Comment exporter mes données ?</div>
+            <div class="faq-answer">Allez dans Paramètres > Exporter les données. Vous pouvez exporter vos données dans un format chiffré à des fins de sauvegarde. Nous vous recommandons de conserver les sauvegardes dans un endroit sûr.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <h2 class="section-title">
+        <div class="section-title-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <span data-i18n="contact.title">Contact Us</span>
+      </h2>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h3 class="contact-title" data-i18n="contact.email.title">Email Support</h3>
+          <p class="contact-info">
+            <a href="mailto:support@digitalsafe.app">monchhichi.nan@hotmail.com</a>
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </div>
+          <h3 class="contact-title">GitHub</h3>
+          <p class="contact-info">
+            <a href="https://github.com/user/digitalsafe" target="_blank">Report Issues</a>
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+          </div>
+          <h3 class="contact-title" data-i18n="contact.response.title">Response Time</h3>
+          <p class="contact-info" data-i18n="contact.response.info">Usually within 24-48 hours</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section class="section" id="privacy">
+      <h2 class="section-title">
+        <div class="section-title-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <span data-i18n="privacy.title">Privacy Policy</span>
+      </h2>
+
+      <div class="glass-card">
+        <!-- Privacy - English -->
+        <div class="policy-content" data-lang="en" class="active">
+          <p><strong>Last Updated: January 2026</strong></p>
+          
+          <h3>Our Commitment</h3>
+          <p>DigitalSafe is built with privacy as a core principle. We believe your personal data belongs to you and only you.</p>
+          
+          <h3>Data Collection</h3>
+          <p>We do NOT collect:</p>
+          <ul>
+            <li>Personal information</li>
+            <li>Usage analytics or telemetry</li>
+            <li>Device identifiers</li>
+            <li>Location data</li>
+            <li>Any of your stored passwords or sensitive data</li>
+          </ul>
+          
+          <h3>Data Storage</h3>
+          <p>All your data is stored locally on your device using Apple's Core Data framework with encryption. If you enable iCloud sync, your data is encrypted end-to-end before being stored in your personal iCloud account.</p>
+          
+          <h3>Third-Party Services</h3>
+          <p>DigitalSafe does not integrate with any third-party analytics, advertising, or tracking services.</p>
+          
+          <h3>Zero-Knowledge Architecture</h3>
+          <p>We use a zero-knowledge architecture, which means we have no ability to access, read, or decrypt your data. Your master password never leaves your device.</p>
+          
+          <h3>Contact</h3>
+          <p>If you have questions about this privacy policy, please contact us at <a href="mailto:privacy@digitalsafe.app">monchhichi.nan@hotmail.com</a></p>
+        </div>
+
+        <!-- Privacy - 简体中文 -->
+        <div class="policy-content" data-lang="zh-Hans">
+          <p><strong>最后更新：2026年1月</strong></p>
+          
+          <h3>我们的承诺</h3>
+          <p>DigitalSafe 以隐私为核心原则构建。我们相信您的个人数据只属于您自己。</p>
+          
+          <h3>数据收集</h3>
+          <p>我们不收集：</p>
+          <ul>
+            <li>个人信息</li>
+            <li>使用分析或遥测数据</li>
+            <li>设备标识符</li>
+            <li>位置数据</li>
+            <li>您存储的任何密码或敏感数据</li>
+          </ul>
+          
+          <h3>数据存储</h3>
+          <p>您的所有数据都使用 Apple 的 Core Data 框架加密存储在本地设备上。如果您启用 iCloud 同步，您的数据在存储到个人 iCloud 账户之前会进行端到端加密。</p>
+          
+          <h3>第三方服务</h3>
+          <p>DigitalSafe 不集成任何第三方分析、广告或追踪服务。</p>
+          
+          <h3>零知识架构</h3>
+          <p>我们使用零知识架构，这意味着我们无法访问、读取或解密您的数据。您的主密码永远不会离开您的设备。</p>
+          
+          <h3>联系方式</h3>
+          <p>如果您对本隐私政策有任何疑问，请通过 <a href="mailto:privacy@digitalsafe.app">monchhichi.nan@hotmail.com</a> 联系我们</p>
+        </div>
+
+        <!-- Privacy - 繁體中文 -->
+        <div class="policy-content" data-lang="zh-Hant">
+          <p><strong>最後更新：2026年1月</strong></p>
+          
+          <h3>我們的承諾</h3>
+          <p>DigitalSafe 以隱私為核心原則構建。我們相信您的個人資料只屬於您自己。</p>
+          
+          <h3>資料收集</h3>
+          <p>我們不收集：</p>
+          <ul>
+            <li>個人資訊</li>
+            <li>使用分析或遙測資料</li>
+            <li>裝置識別碼</li>
+            <li>位置資料</li>
+            <li>您儲存的任何密碼或敏感資料</li>
+          </ul>
+          
+          <h3>資料儲存</h3>
+          <p>您的所有資料都使用 Apple 的 Core Data 框架加密儲存在本地裝置上。如果您啟用 iCloud 同步，您的資料在儲存到個人 iCloud 帳戶之前會進行端對端加密。</p>
+          
+          <h3>第三方服務</h3>
+          <p>DigitalSafe 不整合任何第三方分析、廣告或追蹤服務。</p>
+          
+          <h3>零知識架構</h3>
+          <p>我們使用零知識架構，這意味著我們無法存取、讀取或解密您的資料。您的主密碼永遠不會離開您的裝置。</p>
+          
+          <h3>聯絡方式</h3>
+          <p>如果您對本隱私政策有任何疑問，請透過 <a href="mailto:privacy@digitalsafe.app">monchhichi.nan@hotmail.com</a> 聯絡我們</p>
+        </div>
+
+        <!-- Privacy - 日本語 -->
+        <div class="policy-content" data-lang="ja">
+          <p><strong>最終更新：2026年1月</strong></p>
+          
+          <h3>私たちの約束</h3>
+          <p>DigitalSafeはプライバシーを核心原則として構築されています。私たちは、あなたの個人データはあなただけのものであると信じています。</p>
+          
+          <h3>データ収集</h3>
+          <p>私たちは以下を収集しません：</p>
+          <ul>
+            <li>個人情報</li>
+            <li>使用分析やテレメトリ</li>
+            <li>デバイス識別子</li>
+            <li>位置データ</li>
+            <li>保存されたパスワードや機密データ</li>
+          </ul>
+          
+          <h3>データ保存</h3>
+          <p>すべてのデータは、AppleのCore Dataフレームワークを使用して暗号化され、デバイスにローカル保存されます。iCloud同期を有効にすると、データは個人のiCloudアカウントに保存される前にエンドツーエンドで暗号化されます。</p>
+          
+          <h3>サードパーティサービス</h3>
+          <p>DigitalSafeは、サードパーティの分析、広告、またはトラッキングサービスと統合していません。</p>
+          
+          <h3>ゼロ知識アーキテクチャ</h3>
+          <p>私たちはゼロ知識アーキテクチャを使用しています。これは、私たちがあなたのデータにアクセス、読み取り、または復号化する能力がないことを意味します。マスターパスワードがデバイスから外部に出ることはありません。</p>
+          
+          <h3>お問い合わせ</h3>
+          <p>このプライバシーポリシーについてご質問がある場合は、<a href="mailto:privacy@digitalsafe.app">monchhichi.nan@hotmail.com</a> までご連絡ください</p>
+        </div>
+
+        <!-- Privacy - Deutsch -->
+        <div class="policy-content" data-lang="de">
+          <p><strong>Letzte Aktualisierung: Januar 2026</strong></p>
+          
+          <h3>Unser Versprechen</h3>
+          <p>DigitalSafe wurde mit Datenschutz als Kernprinzip entwickelt. Wir glauben, dass Ihre persönlichen Daten nur Ihnen gehören.</p>
+          
+          <h3>Datenerhebung</h3>
+          <p>Wir erheben NICHT:</p>
+          <ul>
+            <li>Persönliche Informationen</li>
+            <li>Nutzungsanalysen oder Telemetrie</li>
+            <li>Gerätekennungen</li>
+            <li>Standortdaten</li>
+            <li>Ihre gespeicherten Passwörter oder sensiblen Daten</li>
+          </ul>
+          
+          <h3>Datenspeicherung</h3>
+          <p>Alle Ihre Daten werden lokal auf Ihrem Gerät mit Apples Core Data Framework verschlüsselt gespeichert. Wenn Sie die iCloud-Synchronisierung aktivieren, werden Ihre Daten Ende-zu-Ende verschlüsselt, bevor sie in Ihrem persönlichen iCloud-Konto gespeichert werden.</p>
+          
+          <h3>Drittanbieterdienste</h3>
+          <p>DigitalSafe integriert keine Analyse-, Werbe- oder Tracking-Dienste von Drittanbietern.</p>
+          
+          <h3>Zero-Knowledge-Architektur</h3>
+          <p>Wir verwenden eine Zero-Knowledge-Architektur, was bedeutet, dass wir keine Möglichkeit haben, auf Ihre Daten zuzugreifen, sie zu lesen oder zu entschlüsseln. Ihr Master-Passwort verlässt niemals Ihr Gerät.</p>
+          
+          <h3>Kontakt</h3>
+          <p>Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte unter <a href="mailto:privacy@digitalsafe.app">monchhichi.nan@hotmail.com</a></p>
+        </div>
+
+        <!-- Privacy - Français -->
+        <div class="policy-content" data-lang="fr">
+          <p><strong>Dernière mise à jour : Janvier 2026</strong></p>
+          
+          <h3>Notre Engagement</h3>
+          <p>DigitalSafe est construit avec la confidentialité comme principe fondamental. Nous croyons que vos données personnelles n'appartiennent qu'à vous.</p>
+          
+          <h3>Collecte de Données</h3>
+          <p>Nous ne collectons PAS :</p>
+          <ul>
+            <li>Informations personnelles</li>
+            <li>Analyses d'utilisation ou télémétrie</li>
+            <li>Identifiants d'appareil</li>
+            <li>Données de localisation</li>
+            <li>Vos mots de passe stockés ou données sensibles</li>
+          </ul>
+          
+          <h3>Stockage des Données</h3>
+          <p>Toutes vos données sont stockées localement sur votre appareil en utilisant le framework Core Data d'Apple avec chiffrement. Si vous activez la synchronisation iCloud, vos données sont chiffrées de bout en bout avant d'être stockées dans votre compte iCloud personnel.</p>
+          
+          <h3>Services Tiers</h3>
+          <p>DigitalSafe n'intègre aucun service d'analyse, de publicité ou de suivi tiers.</p>
+          
+          <h3>Architecture Zéro Connaissance</h3>
+          <p>Nous utilisons une architecture zéro connaissance, ce qui signifie que nous n'avons aucune capacité d'accéder, lire ou déchiffrer vos données. Votre mot de passe principal ne quitte jamais votre appareil.</p>
+          
+          <h3>Contact</h3>
+          <p>Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter à <a href="mailto:privacy@digitalsafe.app">monchhichi.nan@hotmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <a href="#privacy" data-i18n="nav.privacy">Privacy</a>
+    </div>
+    <p>© 2026 DigitalSafe. <span data-i18n="footer.rights">All rights reserved.</span></p>
+  </footer>
+
+  <script>
+    // Translations
+    const translations = {
+      en: {
+        'nav.faq': 'FAQ',
+        'nav.contact': 'Contact',
+        'nav.privacy': 'Privacy',
+        'hero.title': 'Support Center',
+        'hero.subtitle': 'Get help with DigitalSafe',
+        'ios.badge': 'iOS Exclusive',
+        'ios.title': 'Available Only on iOS App Store',
+        'ios.desc': 'DigitalSafe is exclusively available on the Apple App Store for iPhone and iPad. We do not offer Android or any other platform versions.',
+        'ios.downloadOn': 'Download on the',
+        'ios.warningTitle': '⚠️ Security Warning',
+        'ios.warningText': 'DigitalSafe is ONLY available on the official Apple App Store. We do NOT provide Android versions or any third-party download channels. Any app claiming to be DigitalSafe from other sources may be malicious software. Please protect your security!',
+        'faq.title': 'Frequently Asked Questions',
+        'contact.title': 'Contact Us',
+        'contact.email.title': 'Email Support',
+        'contact.response.title': 'Response Time',
+        'contact.response.info': 'Usually within 24-48 hours',
+        'privacy.title': 'Privacy Policy',
+        'footer.rights': 'All rights reserved.'
+      },
+      'zh-Hans': {
+        'nav.faq': '常见问题',
+        'nav.contact': '联系我们',
+        'nav.privacy': '隐私政策',
+        'hero.title': '支持中心',
+        'hero.subtitle': '获取 DigitalSafe 帮助',
+        'ios.badge': 'iOS 专属',
+        'ios.title': '仅在 iOS App Store 提供下载',
+        'ios.desc': 'DigitalSafe 仅在 Apple App Store 上架，支持 iPhone 和 iPad。我们不提供 Android 版本或任何其他平台版本。',
+        'ios.downloadOn': '下载于',
+        'ios.warningTitle': '⚠️ 安全警告',
+        'ios.warningText': 'DigitalSafe 仅在官方 Apple App Store 提供下载。我们不提供 Android 版本，也没有任何第三方下载渠道。任何声称来自其他来源的 DigitalSafe 应用都可能是恶意软件，请保护您的安全！',
+        'faq.title': '常见问题',
+        'contact.title': '联系我们',
+        'contact.email.title': '邮件支持',
+        'contact.response.title': '响应时间',
+        'contact.response.info': '通常在 24-48 小时内',
+        'privacy.title': '隐私政策',
+        'footer.rights': '保留所有权利。'
+      },
+      'zh-Hant': {
+        'nav.faq': '常見問題',
+        'nav.contact': '聯絡我們',
+        'nav.privacy': '隱私政策',
+        'hero.title': '支援中心',
+        'hero.subtitle': '取得 DigitalSafe 協助',
+        'ios.badge': 'iOS 專屬',
+        'ios.title': '僅在 iOS App Store 提供下載',
+        'ios.desc': 'DigitalSafe 僅在 Apple App Store 上架，支援 iPhone 和 iPad。我們不提供 Android 版本或任何其他平台版本。',
+        'ios.downloadOn': '下載於',
+        'ios.warningTitle': '⚠️ 安全警告',
+        'ios.warningText': 'DigitalSafe 僅在官方 Apple App Store 提供下載。我們不提供 Android 版本，也沒有任何第三方下載渠道。任何聲稱來自其他來源的 DigitalSafe 應用都可能是惡意軟體，請保護您的安全！',
+        'faq.title': '常見問題',
+        'contact.title': '聯絡我們',
+        'contact.email.title': '郵件支援',
+        'contact.response.title': '回應時間',
+        'contact.response.info': '通常在 24-48 小時內',
+        'privacy.title': '隱私政策',
+        'footer.rights': '保留所有權利。'
+      },
+      ja: {
+        'nav.faq': 'よくある質問',
+        'nav.contact': 'お問い合わせ',
+        'nav.privacy': 'プライバシー',
+        'hero.title': 'サポートセンター',
+        'hero.subtitle': 'DigitalSafeのヘルプ',
+        'ios.badge': 'iOS限定',
+        'ios.title': 'iOS App Storeでのみ入手可能',
+        'ios.desc': 'DigitalSafeはApple App StoreでiPhoneとiPad向けにのみ提供されています。Android版やその他のプラットフォーム版は提供していません。',
+        'ios.downloadOn': 'ダウンロード',
+        'ios.warningTitle': '⚠️ セキュリティ警告',
+        'ios.warningText': 'DigitalSafeは公式Apple App Storeでのみ入手可能です。Android版やサードパーティのダウンロードチャネルは提供していません。他のソースからDigitalSafeを名乗るアプリは悪意のあるソフトウェアの可能性があります。セキュリティを守ってください！',
+        'faq.title': 'よくある質問',
+        'contact.title': 'お問い合わせ',
+        'contact.email.title': 'メールサポート',
+        'contact.response.title': '回答時間',
+        'contact.response.info': '通常24〜48時間以内',
+        'privacy.title': 'プライバシーポリシー',
+        'footer.rights': 'All rights reserved.'
+      },
+      de: {
+        'nav.faq': 'FAQ',
+        'nav.contact': 'Kontakt',
+        'nav.privacy': 'Datenschutz',
+        'hero.title': 'Support-Center',
+        'hero.subtitle': 'Hilfe für DigitalSafe',
+        'ios.badge': 'Nur für iOS',
+        'ios.title': 'Nur im iOS App Store erhältlich',
+        'ios.desc': 'DigitalSafe ist ausschließlich im Apple App Store für iPhone und iPad verfügbar. Wir bieten keine Android-Version oder andere Plattformversionen an.',
+        'ios.downloadOn': 'Laden im',
+        'ios.warningTitle': '⚠️ Sicherheitswarnung',
+        'ios.warningText': 'DigitalSafe ist NUR im offiziellen Apple App Store erhältlich. Wir bieten KEINE Android-Versionen oder Drittanbieter-Download-Kanäle an. Jede App, die behauptet, DigitalSafe aus anderen Quellen zu sein, könnte Schadsoftware sein. Schützen Sie Ihre Sicherheit!',
+        'faq.title': 'Häufig gestellte Fragen',
+        'contact.title': 'Kontaktieren Sie uns',
+        'contact.email.title': 'E-Mail-Support',
+        'contact.response.title': 'Antwortzeit',
+        'contact.response.info': 'Normalerweise innerhalb von 24-48 Stunden',
+        'privacy.title': 'Datenschutzrichtlinie',
+        'footer.rights': 'Alle Rechte vorbehalten.'
+      },
+      fr: {
+        'nav.faq': 'FAQ',
+        'nav.contact': 'Contact',
+        'nav.privacy': 'Confidentialité',
+        'hero.title': 'Centre d\'aide',
+        'hero.subtitle': 'Obtenir de l\'aide pour DigitalSafe',
+        'ios.badge': 'Exclusif iOS',
+        'ios.title': 'Disponible uniquement sur l\'App Store iOS',
+        'ios.desc': 'DigitalSafe est exclusivement disponible sur l\'Apple App Store pour iPhone et iPad. Nous ne proposons pas de version Android ni d\'autres plateformes.',
+        'ios.downloadOn': 'Télécharger sur',
+        'ios.warningTitle': '⚠️ Avertissement de sécurité',
+        'ios.warningText': 'DigitalSafe est UNIQUEMENT disponible sur l\'App Store officiel d\'Apple. Nous ne fournissons PAS de versions Android ni de canaux de téléchargement tiers. Toute application prétendant être DigitalSafe provenant d\'autres sources peut être un logiciel malveillant. Protégez votre sécurité !',
+        'faq.title': 'Questions Fréquentes',
+        'contact.title': 'Nous Contacter',
+        'contact.email.title': 'Support par Email',
+        'contact.response.title': 'Temps de Réponse',
+        'contact.response.info': 'Généralement sous 24-48 heures',
+        'privacy.title': 'Politique de Confidentialité',
+        'footer.rights': 'Tous droits réservés.'
+      }
+    };
+
+    const langFlags = {
+      en: '🇺🇸',
+      'zh-Hans': '🇨🇳',
+      'zh-Hant': '🇭🇰',
+      ja: '🇯🇵',
+      de: '🇩🇪',
+      fr: '🇫🇷'
+    };
+
+    const langNames = {
+      en: 'English',
+      'zh-Hans': '简体中文',
+      'zh-Hant': '繁體中文',
+      ja: '日本語',
+      de: 'Deutsch',
+      fr: 'Français'
+    };
+
+    let currentLang = 'en';
+
+    // Initialize language from URL or browser
+    function initLanguage() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get('lang');
+      const browserLang = navigator.language;
+      
+      if (urlLang && translations[urlLang]) {
+        currentLang = urlLang;
+      } else if (browserLang.startsWith('zh-Hans') || browserLang === 'zh-CN') {
+        currentLang = 'zh-Hans';
+      } else if (browserLang.startsWith('zh') || browserLang === 'zh-TW' || browserLang === 'zh-HK') {
+        currentLang = 'zh-Hant';
+      } else if (browserLang.startsWith('ja')) {
+        currentLang = 'ja';
+      } else if (browserLang.startsWith('de')) {
+        currentLang = 'de';
+      } else if (browserLang.startsWith('fr')) {
+        currentLang = 'fr';
+      }
+      
+      setLanguage(currentLang);
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      
+      // Update i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      
+      // Update language-specific content blocks
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.remove('active');
+      });
+      document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+        el.classList.add('active');
+      });
+      
+      // Update language selector button
+      document.getElementById('currentLangFlag').textContent = langFlags[lang];
+      document.getElementById('currentLangName').textContent = langNames[lang];
+      
+      // Update active state in dropdown
+      document.querySelectorAll('.lang-option').forEach(opt => {
+        opt.classList.remove('active');
+        if (opt.dataset.langCode === lang) {
+          opt.classList.add('active');
+        }
+      });
+      
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+      
+      // Update URL without reload
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      window.history.replaceState({}, '', url);
+    }
+
+    // Language dropdown toggle
+    const langBtn = document.getElementById('langBtn');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('show');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.remove('show');
+    });
+
+    // Language option click
+    document.querySelectorAll('.lang-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        setLanguage(opt.dataset.langCode);
+        langDropdown.classList.remove('show');
+      });
+    });
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Initialize
+    initLanguage();
+  </script>
+</body>
+</html>
